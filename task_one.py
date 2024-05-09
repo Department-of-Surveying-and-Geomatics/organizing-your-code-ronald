@@ -1,18 +1,33 @@
-def plot_data(my_file):
-    '''
-    This function plots a scatterplot provided with a coordinate text file path 
+import matplotlib.pyplot as plt
 
-    Parameters
-    ----------
-    my_file : STRING 
-        Required path to the file with coordinates in text format 
+# Basic function to open a file
 
-    Returns
-    ---------
-    Scatterplot 
-    '''
-    scatter_plot = None 
-    """
-    ==> Write your code here <==
-    """
-    return scatter_plot 
+def get_file(choice):
+    
+    if choice == 1:
+        file_path = (x_y_coordinate)
+    else:
+        print("File choice invalid")
+        return None
+# Function to plot_data
+
+def plot_data(file_object):
+    
+        
+    x_coords = []
+    y_coords = []
+    
+    for line in file_object:
+        x, y = map(float, line.split())
+        x_coords.append(x)
+        y_coords.append(y)
+    
+    plt.scatter(x_coords, y_coords)
+    plt.xlabel('X Axis')
+    plt.ylabel('Y Axis')
+    plt.title('Scatter Plot of Coordinates')
+    plt.show()
+
+
+
+    
